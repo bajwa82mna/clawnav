@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClawNav — OpenClaw AI Ecosystem Directory</title>
+<meta name="description" content="The definitive directory for the OpenClaw AI agent ecosystem — tools, deployments, models, skills, and more.">
+<meta name="theme-color" content="#0284c7">
+
+<!-- Preload Syne (display font) so it's ready before first paint -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- Non-blocking font load -->
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap"
+      media="print" onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap">
+</noscript>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════════ -->
+<header>
+  <div class="hdr">
+    <a href="https://claw.corporateinchina.com" class="logo">
+      <div class="logo-mark">🦞</div>
+      <div class="logo-name">Claw<b>Nav</b></div>
+    </a>
+    <div class="hdr-gap"></div>
+    <div class="hdr-right">
+      <div class="lang-pill">
+        <button class="lbtn active" id="btn-en" onclick="setLang('en')">EN</button>
+        <button class="lbtn"        id="btn-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <button class="tbtn" id="tbtn" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ HERO ══════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-in">
+    <div class="badge">🦞 <span data-k="badge">OpenClaw Ecosystem</span></div>
+    <h1 data-k="h1">The OpenClaw AI Directory</h1>
+    <p class="hero-sub" data-k="sub">Your one-stop hub for AI agents, tools, models, skills, deployments, and the full OpenClaw ecosystem.</p>
+    <div class="srch">
+      <div class="srch-box">
+        <span class="srch-ic">🔍</span>
+        <input type="search" id="si" autocomplete="off"
+               placeholder="Search tools, models, platforms…"
+               oninput="doSearch(this.value)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PAGE SHELL ════════════════════════════════════════════ -->
+<div class="shell">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <span class="sb-label" data-k="cats">CATEGORIES</span>
+    <nav>
+      <div class="ni active" data-t="s-battle"   onclick="navGo(this)"><div class="pip"></div><span data-k="n1">🦞 Claw Battle</span></div>
+      <div class="ni"        data-t="s-cloud"    onclick="navGo(this)"><div class="pip"></div><span data-k="n2">☁️ Cloud Deploy</span></div>
+      <div class="ni"        data-t="s-tut"      onclick="navGo(this)"><div class="pip"></div><span data-k="n3">📚 Tutorials</span></div>
+      <div class="ni"        data-t="s-commonai" onclick="navGo(this)"><div class="pip"></div><span data-k="n4">🤖 Common AI</span></div>
+      <div class="ni"        data-t="s-coding"   onclick="navGo(this)"><div class="pip"></div><span data-k="n5">💻 Coding Plans</span></div>
+      <div class="ni"        data-t="s-maas"     onclick="navGo(this)"><div class="pip"></div><span data-k="n6">⚙️ MaaS Platforms</span></div>
+      <div class="ni"        data-t="s-models"   onclick="navGo(this)"><div class="pip"></div><span data-k="n7">🧠 AI Models</span></div>
+      <div class="ni"        data-t="s-skills"   onclick="navGo(this)"><div class="pip"></div><span data-k="n8">🛒 Skills Market</span></div>
+      <div class="ni"        data-t="s-eco"      onclick="navGo(this)"><div class="pip"></div><span data-k="n9">🌐 Ecosystem</span></div>
+      <div class="ni"        data-t="s-agenteco" onclick="navGo(this)"><div class="pip"></div><span data-k="n10">🤝 Agent Ecosystem</span></div>
+      <div class="ni"        data-t="s-agentpay" onclick="navGo(this)"><div class="pip"></div><span data-k="n11">💳 Agent Payments</span></div>
+      <div class="ni"        data-t="s-crypto"   onclick="navGo(this)"><div class="pip"></div><span data-k="n12">₿ Crypto</span></div>
+    </nav>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+    <div class="no-res" id="nores">
+      <div class="no-res-ic">🔍</div>
+      <p data-k="nores">No results found. Try a different keyword.</p>
+    </div>
+
+    <!-- ══ CLAW BATTLE ══════════════════════════════════════ -->
+    <section class="cat" id="s-battle">
+      <div class="cat-hd">
+        <div class="cat-ic">🦞</div>
+        <div class="cat-info">
+          <div class="cat-ttl" data-k="t1">Claw Battle</div>
+          <div class="cat-sub" data-k="d1">OpenClaw variants — cloud &amp; local deployments</div>
+        </div>
+        <div class="cat-cnt">33</div>
+      </div>
+      <div class="grid">
+        <a href="https://openclaw.ai/" target="_blank" rel="noopener" class="card" data-q="openclaw official open source local autonomous ai server"><div class="cico">OC</div><div class="cbody"><div class="cname">OpenClaw Official</div><div class="cdesc">Open-source, local-first autonomous AI assistant for your computer or server.</div></div><div class="carr">↗</div></a>
+        <a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener" class="card" data-q="github source code repository openclaw"><div class="cico">GH</div><div class="cbody"><div class="cname">Official GitHub</div><div class="cdesc">Browse and contribute to the OpenClaw source code repository.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.kimi.com/bot" target="_blank" rel="noopener" class="card" data-q="kimi claw cloud agent framework integration"><div class="cico">KC</div><div class="cbody"><div class="cname">Kimi Claw</div><div class="cdesc">Cloud integration of the globally popular OpenClaw agent framework.</div><div class="tags"><span class="tag tc" data-k="tc">Cloud</span></div></div><div class="carr">↗</div></a>
+        <a href="https://agent.minimaxi.com/max-claw" target="_blank" rel="noopener" class="card" data-q="maxclaw minimax cloud deploy seconds zero maintenance"><div class="cico">MX</div><div class="cbody"><div class="cname">MaxClaw</div><div class="cdesc">Deploy OpenClaw to the cloud in under 10 seconds — zero maintenance.</div><div class="tags"><span class="tag tc" data-k="tc">Cloud</span></div></div><div class="carr">↗</div></a>
+        <a href="https://openclaw.feishu.cn/home" target="_blank" rel="noopener" class="card" data-q="feishu lark openclaw cloud memory plugin"><div class="cico">FS</div><div class="cbody"><div class="cname">Feishu OpenClaw</div><div class="cdesc">Full OpenClaw on Feishu — long-term memory and official Lark plugins.</div><div class="tags"><span class="tag tc" data-k="tc">Cloud</span></div></div><div class="carr">↗</div></a>
+        <a href="https://www.volcengine.com/experience/ark?mode=claw" target="_blank" rel="noopener" class="card" data-q="arkclaw volcano engine cloud training inference evaluation"><div class="cico">AK</div><div class="cbody"><div class="cname">ArkClaw</div><div class="cdesc">Full-suite model training, inference, evaluation and fine-tuning services.</div><div class="tags"><span class="tag tc" data-k="tc">Cloud</span></div></div><div class="carr">↗</div></a>
+        <a href="https://code.coze.cn/home" target="_blank" rel="noopener" class="card" data-q="coze bytedance bot builder agent platform"><div class="cico">CZ</div><div class="cbody"><div class="cname">Coze (扣子)</div><div class="cdesc">ByteDance's AI Agent dev platform — build your own bots easily.</div><div class="tags"><span class="tag tc" data-k="tc">Cloud</span></div></div><div class="carr">↗</div></a>
+        <a href="https://cloud.baidu.com/product/duclaw.html" target="_blank" rel="noopener" class="card" data-q="duclaw baidu cloud instant deploy agent no config"><div class="cico">DC</div><div class="cbody"><div class="cname">DuClaw</div><div class="cdesc">Skip server setup and API key config — instant AI agent deployment.</div><div class="tags"><span class="tag tc" data-k="tc">Cloud</span></div></div><div class="carr">↗</div></a>
+        <a href="https://aistudio.xiaomimimo.com/" target="_blank" rel="noopener" class="card" data-q="xiaomi mimo claw one click cloud model"><div class="cico">XM</div><div class="cbody"><div class="cname">Xiaomi MiMo Claw</div><div class="cdesc">One-click OpenClaw deployment powered by Xiaomi's latest large model.</div><div class="tags"><span class="tag tc" data-k="tc">Cloud</span></div></div><div class="carr">↗</div></a>
+        <a href="https://www.stepfun.com/openclaw" target="_blank" rel="noopener" class="card" data-q="stepclaw stepfun cloud ai assistant openclaw"><div class="cico">SC</div><div class="cbody"><div class="cname">StepClaw</div><div class="cdesc">StepFun's cloud AI assistant built on the OpenClaw framework.</div><div class="tags"><span class="tag tc" data-k="tc">Cloud</span></div></div><div class="carr">↗</div></a>
+        <a href="https://agent.xfyun.cn/astron-claw" target="_blank" rel="noopener" class="card" data-q="astrnclaw iflytek xfyun cloud one click always online"><div class="cico">AC</div><div class="cbody"><div class="cname">AstronClaw</div><div class="cdesc">iFlytek's cloud OpenClaw — one-click setup, always online.</div><div class="tags"><span class="tag tc" data-k="tc">Cloud</span></div></div><div class="carr">↗</div></a>
+        <a href="https://happycapy.ai/" target="_blank" rel="noopener" class="card" data-q="happycapy cloud agent computer everyone"><div class="cico">HC</div><div class="cbody"><div class="cname">Happycapy</div><div class="cdesc">A cloud-based Agent-native computer designed for everyone.</div><div class="tags"><span class="tag tc" data-k="tc">Cloud</span></div></div><div class="carr">↗</div></a>
+        <a href="https://claw.guanjia.qq.com/" target="_blank" rel="noopener" class="card" data-q="qclaw tencent wechat local remote pc control"><div class="cico">QC</div><div class="cbody"><div class="cname">Qclaw</div><div class="cdesc">WeChat-linked local agent — control your PC remotely via WeChat.</div><div class="tags"><span class="tag tl" data-k="tl">Local</span></div></div><div class="carr">↗</div></a>
+        <a href="https://cloud.baidu.com/product/dumate.html" target="_blank" rel="noopener" class="card" data-q="dumate baidu desktop office companion ai agent"><div class="cico">DM</div><div class="cbody"><div class="cname">DuMate</div><div class="cdesc">Baidu's desktop AI agent — your intelligent office companion.</div><div class="tags"><span class="tag tl" data-k="tl">Local</span></div></div><div class="carr">↗</div></a>
+        <a href="https://lobsterai.youdao.com/" target="_blank" rel="noopener" class="card" data-q="lobsterai youdao personal assistant 24h workflow"><div class="cico">LA</div><div class="cbody"><div class="cname">LobsterAI (有道龙虾)</div><div class="cdesc">Full-scenario personal assistant — proactively executes tasks 24/7.</div><div class="tags"><span class="tag tl" data-k="tl">Local</span></div></div><div class="carr">↗</div></a>
+        <a href="https://www.codebuddy.cn/work/" target="_blank" rel="noopener" class="card" data-q="workbuddy desktop agent data content analysis"><div class="cico">WB</div><div class="cbody"><div class="cname">WorkBuddy</div><div class="cdesc">AI-native desktop workbench — one instruction for data, content, and deep analysis.</div><div class="tags"><span class="tag tl" data-k="tl">Local</span></div></div><div class="carr">↗</div></a>
+        <a href="https://autoglm.zhipuai.cn/autoclaw/" target="_blank" rel="noopener" class="card" data-q="autoclaw zhipu glm feishu browser automation skills"><div class="cico">AT</div><div class="cbody"><div class="cname">AutoClaw</div><div class="cdesc">Feishu integration, hot-swap models, 50+ skills and AutoGLM browser automation.</div><div class="tags"><span class="tag tl" data-k="tl">Local</span></div></div><div class="carr">↗</div></a>
+        <a href="https://www.dingtalk.com/wukong" target="_blank" rel="noopener" class="card" data-q="wukong alibaba dingtalk enterprise agent 24h"><div class="cico">WK</div><div class="cbody"><div class="cname">悟空 (Wukong)</div><div class="cdesc">Alibaba's enterprise AI-native work platform — 24h agent army for every team.</div><div class="tags"><span class="tag tl" data-k="tl">Local</span></div></div><div class="carr">↗</div></a>
+        <a href="https://claw.360.cn/" target="_blank" rel="noopener" class="card" data-q="360 security claw local secure china first"><div class="cico">3C</div><div class="cbody"><div class="cname">360 Security Claw</div><div class="cdesc">China's first OpenClaw product built on a security-first architecture.</div><div class="tags"><span class="tag tl" data-k="tl">Local</span></div></div><div class="carr">↗</div></a>
+        <a href="https://www.stepfun.com/download" target="_blank" rel="noopener" class="card" data-q="stepfun desktop agent parallel tasks proactive"><div class="cico">SD</div><div class="cbody"><div class="cname">StepFun Desktop Agent</div><div class="cdesc">Always-present, proactive desktop agent with parallel multi-task execution.</div><div class="tags"><span class="tag tl" data-k="tl">Local</span></div></div><div class="carr">↗</div></a>
+        <a href="https://jvs.wuying.aliyun.com/" target="_blank" rel="noopener" class="card" data-q="jvs claw alibaba cloud multi agent no deploy zero config"><div class="cico">JV</div><div class="cbody"><div class="cname">JVS Claw</div><div class="cdesc">Alibaba Cloud's multi-agent collaboration — deploy-free, zero-config.</div></div><div class="carr">↗</div></a>
+        <a href="https://easyclaw.com/zh-cn/" target="_blank" rel="noopener" class="card" data-q="easyclaw local gateway skill visual config multichat"><div class="cico">EC</div><div class="cbody"><div class="cname">EasyClaw</div><div class="cdesc">One-click OpenClaw gateway with visual skill config and multi-platform chat.</div><div class="tags"><span class="tag tl" data-k="tl">Local</span></div></div><div class="carr">↗</div></a>
+        <a href="https://copaw.agentscope.io/" target="_blank" rel="noopener" class="card" data-q="copaw alibaba personal agent local cloud zero code dual deploy"><div class="cico">CP</div><div class="cbody"><div class="cname">CoPaw</div><div class="cdesc">Alibaba's personal agent workbench — local/cloud dual deployment, zero-code skills.</div><div class="tags"><span class="tag tl" data-k="tl">Local</span></div></div><div class="carr">↗</div></a>
+        <a href="https://manus.im/" target="_blank" rel="noopener" class="card" data-q="manus agent automation report data analysis task planning"><div class="cico">MN</div><div class="cbody"><div class="cname">Manus</div><div class="cdesc">Full automation from task planning to execution — reports, data analysis, cross-platform ops.</div></div><div class="carr">↗</div></a>
+        <a href="https://niuma.limyai.com/" target="_blank" rel="noopener" class="card" data-q="niuma ai free local manus genspark document workflow"><div class="cico">NM</div><div class="cbody"><div class="cname">NiuMa AI (牛马 AI)</div><div class="cdesc">Free local Manus/Genspark alternative — documents, data, and complex workflows.</div></div><div class="carr">↗</div></a>
+        <a href="https://mulerun.com/" target="_blank" rel="noopener" class="card" data-q="mulerun self evolving ai personal agent"><div class="cico">MR</div><div class="cbody"><div class="cname">MuleRun</div><div class="cdesc">The world's first self-evolving personal AI agent.</div></div><div class="carr">↗</div></a>
+        <a href="https://lobehub.com/zh" target="_blank" rel="noopener" class="card" data-q="lobehub open source agent platform llm collaboration"><div class="cico">LH</div><div class="cbody"><div class="cname">LobeHub</div><div class="cdesc">Open-source large model collaboration platform centered on AI Agents.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.poorclaw.com/" target="_blank" rel="noopener" class="card" data-q="poorclaw free openclaw no cost zero hidden fees"><div class="cico">PC</div><div class="cbody"><div class="cname">PoorClaw (穷虾)</div><div class="cdesc">Use all of OpenClaw's AI capabilities for free — zero hidden fees.</div></div><div class="carr">↗</div></a>
+        <a href="https://higress.ai/hiclaw" target="_blank" rel="noopener" class="card" data-q="hiclaw team collaboration manager agent multi openclaw"><div class="cico">HI</div><div class="cbody"><div class="cname">HiClaw</div><div class="cdesc">Team collaboration upgrade for OpenClaw with Manager Agent architecture.</div></div><div class="carr">↗</div></a>
+        <a href="https://kilo.ai/kiloclaw" target="_blank" rel="noopener" class="card" data-q="kiloclaw managed hosted developer team service"><div class="cico">KL</div><div class="cbody"><div class="cname">KiloClaw</div><div class="cdesc">Managed OpenClaw service tailored for developers and teams.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.nvidia.com/en-us/ai/nemoclaw/" target="_blank" rel="noopener" class="card" data-q="nemoclaw nvidia enterprise open source agent platform"><div class="cico">NC</div><div class="cbody"><div class="cname">NemoClaw (NVIDIA)</div><div class="cdesc">NVIDIA's open-source enterprise AI agent platform.</div></div><div class="carr">↗</div></a>
+        <a href="https://loomy.xunfei.cn/" target="_blank" rel="noopener" class="card" data-q="loomy iflytek desktop assistant zero config download go"><div class="cico">LM</div><div class="cbody"><div class="cname">Loomy</div><div class="cdesc">iFlytek's desktop AI assistant built on AstronClaw — zero-config, download and go.</div></div><div class="carr">↗</div></a>
+        <a href="https://tabbitbrowser.com/" target="_blank" rel="noopener" class="card" data-q="tabbit browser local agent screenshot web page file automation"><div class="cico">TB</div><div class="cbody"><div class="cname">Tabbit Browser</div><div class="cdesc">Reference web pages, screenshots &amp; files in chat — Agent auto-executes tasks.</div><div class="tags"><span class="tag tl" data-k="tl">Local</span></div></div><div class="carr">↗</div></a>
+      </div>
+    </section>
+
+    <!-- ══ CLOUD DEPLOY ═════════════════════════════════════ -->
+    <section class="cat" id="s-cloud">
+      <div class="cat-hd"><div class="cat-ic">☁️</div><div class="cat-info"><div class="cat-ttl" data-k="t2">Cloud Deployment</div><div class="cat-sub" data-k="d2">Deploy OpenClaw on China's major cloud providers</div></div><div class="cat-cnt">8</div></div>
+      <div class="grid">
+        <a href="https://www.aliyun.com/benefit/scene/moltbot" target="_blank" rel="noopener" class="card" data-q="alibaba aliyun cloud 9.9 deploy ai assistant"><div class="cico">AY</div><div class="cbody"><div class="cname">Alibaba Cloud (阿里云)</div><div class="cdesc">3-step setup to build your AI assistant — starting from ¥9.9.</div></div><div class="carr">↗</div></a>
+        <a href="https://cloud.tencent.com/act/pro/openclaw" target="_blank" rel="noopener" class="card" data-q="tencent cloud server stable secure always online"><div class="cico">TX</div><div class="cbody"><div class="cname">Tencent Cloud (腾讯云)</div><div class="cdesc">Lightweight servers keep OpenClaw always online — stable and secure.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.volcengine.com/activity/clawdbot" target="_blank" rel="noopener" class="card" data-q="volcano engine bytedance minute private ai butler deploy"><div class="cico">VE</div><div class="cbody"><div class="cname">Volcano Engine (火山引擎)</div><div class="cdesc">Deploy in minutes — own your private AI butler.</div></div><div class="carr">↗</div></a>
+        <a href="https://cloud.baidu.com/product/BCC/moltbot.html" target="_blank" rel="noopener" class="card" data-q="baidu cloud ai assistant activate daily management simple"><div class="cico">BD</div><div class="cbody"><div class="cname">Baidu Cloud (百度智能云)</div><div class="cdesc">From quick setup to daily management — activate your AI assistant in minutes.</div></div><div class="carr">↗</div></a>
+        <a href="https://activity.huaweicloud.com/openclaw.html" target="_blank" rel="noopener" class="card" data-q="huawei cloud flexus openclaw server deploy instance"><div class="cico">HW</div><div class="cbody"><div class="cname">Huawei Cloud (华为云)</div><div class="cdesc">Deploy OpenClaw on Huawei Cloud Flexus L-series server instances.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.jdcloud.com/cn/pages/openclaw" target="_blank" rel="noopener" class="card" data-q="jd jdcloud openclaw lobster promo gift welcome"><div class="cico">JD</div><div class="cbody"><div class="cname">JD Cloud (京东云)</div><div class="cdesc">Deploy OpenClaw on JD Cloud — lobster gift included as a welcome bonus!</div></div><div class="carr">↗</div></a>
+        <a href="https://www.scnet.cn/ui/chatbot/openclaw" target="_blank" rel="noopener" class="card" data-q="national supercomputer free tokens 10m 0.1 trial 2 weeks"><div class="cico">SC2</div><div class="cbody"><div class="cname">National Supercomputer (国家超算)</div><div class="cdesc">Free 2-week trial — 10M tokens free, then renew from ¥0.1.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.ctyun.cn/act/OpenClaw" target="_blank" rel="noopener" class="card" data-q="tianyi chinatelecom cloud isolated secure enterprise data"><div class="cico">TY</div><div class="cbody"><div class="cname">Tianyi Cloud (天翼云)</div><div class="cdesc">Isolated runtime on China Telecom's platform — enterprise-grade data security.</div></div><div class="carr">↗</div></a>
+      </div>
+    </section>
+
+    <!-- ══ TUTORIALS ════════════════════════════════════════ -->
+    <section class="cat" id="s-tut">
+      <div class="cat-hd"><div class="cat-ic">📚</div><div class="cat-info"><div class="cat-ttl" data-k="t3">Tutorials</div><div class="cat-sub" data-k="d3">Guides, handbooks, and learning resources for OpenClaw</div></div><div class="cat-cnt">8</div></div>
+      <div class="grid">
+        <a href="https://docs.openclaw.ai/zh-CN" target="_blank" rel="noopener" class="card" data-q="official docs documentation gateway whatsapp telegram discord imessage"><div class="cico">📖</div><div class="cbody"><div class="cname">Official Documentation</div><div class="cdesc">AI agent gateway for any OS — WhatsApp, Telegram, Discord, iMessage and more.</div></div><div class="carr">↗</div></a>
+        <a href="https://my.feishu.cn/wiki/H27Iw9ussiaYbokymhncExtjnAh" target="_blank" rel="noopener" class="card" data-q="orange book primer intro feishu wiki productive openclaw"><div class="cico">🟠</div><div class="cbody"><div class="cname">OpenClaw Orange Book</div><div class="cdesc">A comprehensive primer — from first contact to productive daily use.</div></div><div class="carr">↗</div></a>
+        <a href="https://yunyinghui.feishu.cn/wiki/Ru7PwG82qiDGo1kGMFZcxqpGnnf" target="_blank" rel="noopener" class="card" data-q="wanxiang ai lab manual beginner expert workflow hands on"><div class="cico">WX</div><div class="cbody"><div class="cname">Wanxiang AI Lab (万象)</div><div class="cdesc">From beginner to expert — full hands-on OpenClaw workflow mastery.</div></div><div class="carr">↗</div></a>
+        <a href="https://waytoagi.feishu.cn/wiki/CCR4wl3upi6dF9kVE5YcAcGcnlU" target="_blank" rel="noopener" class="card" data-q="waytoagi knowledge base deep dive comprehensive agi"><div class="cico">AG</div><div class="cbody"><div class="cname">WaytoAGI (AI之路)</div><div class="cdesc">Deep-dive into OpenClaw from the largest comprehensive AI knowledge base.</div></div><div class="carr">↗</div></a>
+        <a href="https://datawhalechina.github.io/hello-claw/cn/adopt/intro/" target="_blank" rel="noopener" class="card" data-q="hello claw datawhale open source tutorial zero beginner build assistant"><div class="cico">DW</div><div class="cbody"><div class="cname">Hello Claw (Datawhale)</div><div class="cdesc">Open-source tutorial by Datawhale — from zero to building your own AI assistant.</div></div><div class="carr">↗</div></a>
+        <a href="https://awesome.tryopenclaw.asia/" target="_blank" rel="noopener" class="card" data-q="awesome openclaw comprehensive chinese tutorial guide start zero"><div class="cico">AW</div><div class="cbody"><div class="cname">Awesome OpenClaw Tutorial</div><div class="cdesc">The most comprehensive Chinese-language OpenClaw guide — start from zero.</div></div><div class="carr">↗</div></a>
+        <a href="https://larkcommunity.feishu.cn/wiki/GGJPwJ2IfiTynVk2Vy4cZbRvn2f" target="_blank" rel="noopener" class="card" data-q="feishu official guide cloud deploy 1 minute simple easy"><div class="cico">FS2</div><div class="cbody"><div class="cname">Feishu Official Guide</div><div class="cdesc">Simple cloud deployment tutorial — complete the setup in just 1 minute.</div></div><div class="carr">↗</div></a>
+        <a href="https://github.com/AlexAnys/awesome-openclaw-usecases-zh" target="_blank" rel="noopener" class="card" data-q="chinese use cases github collection real examples curated"><div class="cico">GH2</div><div class="cbody"><div class="cname">Chinese Use Case Collection</div><div class="cdesc">A curated collection of real OpenClaw use cases from Chinese-language users.</div></div><div class="carr">↗</div></a>
+      </div>
+    </section>
+
+    <!-- ══ COMMON AI ════════════════════════════════════════ -->
+    <section class="cat" id="s-commonai">
+      <div class="cat-hd"><div class="cat-ic">🤖</div><div class="cat-info"><div class="cat-ttl" data-k="t4">Common AI Tools</div><div class="cat-sub" data-k="d4">Popular AI assistants and generation tools</div></div><div class="cat-cnt">9</div></div>
+      <div class="grid">
+        <a href="https://www.qianwen.com/" target="_blank" rel="noopener" class="card" data-q="qianwen qwen alibaba llm chinese multilingual content reasoning"><div class="cico">QW</div><div class="cbody"><div class="cname">Qianwen (千问)</div><div class="cdesc">Alibaba's LLM — multi-turn chat, content creation, reasoning, multilingual support.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.doubao.com/" target="_blank" rel="noopener" class="card" data-q="doubao bytedance ai smart assistant tool everyday"><div class="cico">DB</div><div class="cbody"><div class="cname">Doubao (豆包)</div><div class="cdesc">ByteDance's AI tool — your all-in-one smart assistant.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.kimi.com/" target="_blank" rel="noopener" class="card" data-q="kimi moonshot reasoning deep thinking parsing analysis"><div class="cico">KM</div><div class="cbody"><div class="cname">Kimi</div><div class="cdesc">Reasoning, parsing, and deep-thinking AI assistant from Moonshot AI.</div></div><div class="carr">↗</div></a>
+        <a href="https://yuanbao.tencent.com/" target="_blank" rel="noopener" class="card" data-q="tencent yuanbao free ai intelligent assistant everyday"><div class="cico">YB</div><div class="cbody"><div class="cname">Tencent Yuanbao (腾讯元宝)</div><div class="cdesc">Tencent's free AI intelligent assistant for everyday use.</div></div><div class="carr">↗</div></a>
+        <a href="https://chat.deepseek.com/" target="_blank" rel="noopener" class="card" data-q="deepseek open source model reasoning agent chat strong"><div class="cico">DS</div><div class="cbody"><div class="cname">DeepSeek</div><div class="cdesc">Open-source LLM and chat assistant — strong reasoning and agent capabilities.</div></div><div class="carr">↗</div></a>
+        <a href="https://chat.openai.com" target="_blank" rel="noopener" class="card" data-q="chatgpt openai gpt leading worldwide ai chatbot powerful versatile"><div class="cico">GP</div><div class="cbody"><div class="cname">ChatGPT (OpenAI)</div><div class="cdesc">The world's leading AI chatbot — powerful, versatile, and widely used.</div></div><div class="carr">↗</div></a>
+        <a href="https://gemini.google.com/" target="_blank" rel="noopener" class="card" data-q="gemini google multimodal chat ai assistant dialogue"><div class="cico">GM</div><div class="cbody"><div class="cname">Gemini (Google)</div><div class="cdesc">Google's multimodal AI chat and dialogue assistant.</div></div><div class="carr">↗</div></a>
+        <a href="https://grok.com/" target="_blank" rel="noopener" class="card" data-q="grok xai elon musk realtime twitter x assistant web access"><div class="cico">GK</div><div class="cbody"><div class="cname">Grok (xAI)</div><div class="cdesc">Elon Musk's xAI-powered assistant with real-time web access.</div></div><div class="carr">↗</div></a>
+        <a href="https://jimeng.jianying.com/ai-tool/home" target="_blank" rel="noopener" class="card" data-q="jimeng jianying video generation seedance bytedance ai model"><div class="cico">JM</div><div class="cbody"><div class="cname">Jimeng AI (即梦AI)</div><div class="cdesc">Seedance 2.0 — ByteDance's latest AI video generation model.</div></div><div class="carr">↗</div></a>
+      </div>
+    </section>
+
+    <!-- ══ CODING PLANS ══════════════════════════════════════ -->
+    <section class="cat" id="s-coding">
+      <div class="cat-hd"><div class="cat-ic">💻</div><div class="cat-info"><div class="cat-ttl" data-k="t5">Coding Plans</div><div class="cat-sub" data-k="d5">AI coding subscriptions with API access for developers</div></div><div class="cat-cnt">7</div></div>
+      <div class="grid">
+        <a href="https://www.kimi.com/code" target="_blank" rel="noopener" class="card" data-q="kimi coding plan developer api subscription stable fast"><div class="cico">KM2</div><div class="cbody"><div class="cname">Kimi Coding Plan</div><div class="cdesc">Faster, more stable API responses for programming tasks — Kimi developer membership.</div></div><div class="carr">↗</div></a>
+        <a href="https://platform.minimaxi.com/subscribe/token-plan" target="_blank" rel="noopener" class="card" data-q="minimax token plan coding agent model api subscription flexible"><div class="cico">MM</div><div class="cbody"><div class="cname">MiniMax Token Plan</div><div class="cdesc">MiniMax's strongest coding and agent models on flexible token-based subscription.</div></div><div class="carr">↗</div></a>
+        <a href="https://bigmodel.cn/glm-coding" target="_blank" rel="noopener" class="card" data-q="zhipu glm coding plan glm5 glm4.7 model api plans updated"><div class="cico">ZP</div><div class="cbody"><div class="cname">Zhipu Coding Plan (智谱)</div><div class="cdesc">GLM-5, GLM-4.7, GLM-4.6 support — all plans include all models, continuously updated.</div></div><div class="carr">↗</div></a>
+        <a href="https://cloud.tencent.com/act/pro/codingplan" target="_blank" rel="noopener" class="card" data-q="tencent cloud coding plan ai programming tools models bundle"><div class="cico">TX2</div><div class="cbody"><div class="cname">Tencent Cloud Coding</div><div class="cdesc">Multi-model bundle for mainstream AI coding tools — AI-assisted every line of code.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.aliyun.com/benefit/scene/codingplan" target="_blank" rel="noopener" class="card" data-q="alibaba aliyun coding plan subscription api monthly quota high frequency"><div class="cico">AY2</div><div class="cbody"><div class="cname">Alibaba Cloud Coding Plan</div><div class="cdesc">High-frequency AI coding subscription with multi-model support and monthly API quota.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.volcengine.com/activity/codingplan" target="_blank" rel="noopener" class="card" data-q="volcano engine coding plan arkclaw new user discount 8.9"><div class="cico">VC</div><div class="cbody"><div class="cname">Volcano Engine Coding Plan</div><div class="cdesc">New user exclusive — first month from ¥8.9, free model choice and ArkClaw access.</div></div><div class="carr">↗</div></a>
+        <a href="https://platform.stepfun.com/step-plan" target="_blank" rel="noopener" class="card" data-q="step plan stepfun coding subscription api developer dedicated"><div class="cico">SP</div><div class="cbody"><div class="cname">Step Plan (阶跃星辰)</div><div class="cdesc">StepFun's dedicated coding and API subscription plan for developers.</div></div><div class="carr">↗</div></a>
+      </div>
+    </section>
+
+    <!-- ══ MAAS ══════════════════════════════════════════════ -->
+    <section class="cat" id="s-maas">
+      <div class="cat-hd"><div class="cat-ic">⚙️</div><div class="cat-info"><div class="cat-ttl" data-k="t6">MaaS Platforms</div><div class="cat-sub" data-k="d6">Model-as-a-Service — unified API access to large models</div></div><div class="cat-cnt">8</div></div>
+      <div class="grid">
+        <a href="https://bailian.console.aliyun.com/" target="_blank" rel="noopener" class="card" data-q="alibaba bailian maas enterprise model api commercial deploy platform"><div class="cico">BL</div><div class="cbody"><div class="cname">Alibaba Bailian (百炼)</div><div class="cdesc">Enterprise-grade model service with rich resources and strong commercial deployment.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.volcengine.com/product/ark" target="_blank" rel="noopener" class="card" data-q="volcano ark training inference evaluation fine tuning ecosystem support"><div class="cico">VA</div><div class="cbody"><div class="cname">Volcano Ark (火山方舟)</div><div class="cdesc">Full-suite training, inference, evaluation and fine-tuning — key ecosystem support.</div></div><div class="carr">↗</div></a>
+        <a href="https://cloud.baidu.com/product-s/qianfan_home" target="_blank" rel="noopener" class="card" data-q="baidu qianfan agent platform enterprise toolchain one stop model"><div class="cico">QF</div><div class="cbody"><div class="cname">Baidu Qianfan (千帆)</div><div class="cdesc">Agent-centric enterprise model service platform with full development toolchain.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.siliconflow.cn/" target="_blank" rel="noopener" class="card" data-q="siliconflow model aggregation 200 api unified open commercial china"><div class="cico">SF</div><div class="cbody"><div class="cname">SiliconFlow (硅基流动)</div><div class="cdesc">China's leading model aggregator — unified API for 200+ open and commercial models.</div></div><div class="carr">↗</div></a>
+        <a href="https://openrouter.ai" target="_blank" rel="noopener" class="card" data-q="openrouter api unified model aggregation global international hundreds"><div class="cico">OR</div><div class="cbody"><div class="cname">OpenRouter</div><div class="cdesc">Global AI model aggregation — single API to access hundreds of models worldwide.</div></div><div class="carr">↗</div></a>
+        <a href="https://zenmux.ai/invite/9ENK8S" target="_blank" rel="noopener" class="card" data-q="zenmux enterprise aggregator insurance compensation latest models one stop"><div class="cico">ZM</div><div class="cbody"><div class="cname">ZenMux</div><div class="cdesc">World's first enterprise model aggregator with insurance compensation.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.model123.ai/" target="_blank" rel="noopener" class="card" data-q="model123 enterprise ai coding service platform professional grade"><div class="cico">M3</div><div class="cbody"><div class="cname">Model123</div><div class="cdesc">Professional enterprise-grade AI coding service platform.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.huaweicloud.com/ai/token-service.html" target="_blank" rel="noopener" class="card" data-q="huawei cloud maas lifecycle training compression deployment evaluation full"><div class="cico">HW2</div><div class="cbody"><div class="cname">Huawei Cloud MaaS</div><div class="cdesc">Full model lifecycle — training, fine-tuning, compression, deployment and evaluation.</div></div><div class="carr">↗</div></a>
+      </div>
+    </section>
+
+    <!-- ══ AI MODELS ════════════════════════════════════════ -->
+    <section class="cat" id="s-models">
+      <div class="cat-hd"><div class="cat-ic">🧠</div><div class="cat-info"><div class="cat-ttl" data-k="t7">AI Models</div><div class="cat-sub" data-k="d7">Leading foundation models and evaluation leaderboards</div></div><div class="cat-cnt">17</div></div>
+      <div class="grid">
+        <a href="https://platform.moonshot.cn/" target="_blank" rel="noopener" class="card" data-q="kimi api moonshot code generation visual reasoning multimodal"><div class="cico">KA</div><div class="cbody"><div class="cname">Kimi (Moonshot API)</div><div class="cdesc">Code generation, dialogue, visual reasoning — full multimodal understanding.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.minimaxi.com/" target="_blank" rel="noopener" class="card" data-q="minimax multimodal code agent ultra long context model strong"><div class="cico">MM2</div><div class="cbody"><div class="cname">MiniMax</div><div class="cdesc">Self-developed multimodal models with powerful code, agent, and ultra-long context.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.bigmodel.cn/" target="_blank" rel="noopener" class="card" data-q="zhipu glm domestic general ai platform vision llm model new generation"><div class="cico">GL</div><div class="cbody"><div class="cname">Zhipu GLM (智谱AI)</div><div class="cdesc">New-generation domestic AI platform — multiple LLMs and multimodal vision models.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.deepseek.com/" target="_blank" rel="noopener" class="card" data-q="deepseek v3 api agent reasoning open source model enhanced"><div class="cico">DS2</div><div class="cbody"><div class="cname">DeepSeek (API)</div><div class="cdesc">DeepSeek-V3.2 — enhanced agent capabilities with integrated reasoning across platforms.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.aliyun.com/product/tongyi" target="_blank" rel="noopener" class="card" data-q="qwen alibaba native multimodal language vision unified architecture api"><div class="cico">QN</div><div class="cbody"><div class="cname">Qwen (千问 API)</div><div class="cdesc">Alibaba's native multimodal model — unified architecture integrating language and vision.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.doubao.com/chat/" target="_blank" rel="noopener" class="card" data-q="doubao bytedance model reasoning gui multimodal frontend coding strong"><div class="cico">DB2</div><div class="cbody"><div class="cname">Doubao (字节跳动)</div><div class="cdesc">ByteDance's model — strong reasoning, multimodal understanding, GUI and front-end coding.</div></div><div class="carr">↗</div></a>
+        <a href="https://platform.claude.com/" target="_blank" rel="noopener" class="card" data-q="claude anthropic llm safety aligned api model family capable"><div class="cico">CL</div><div class="cbody"><div class="cname">Claude (Anthropic)</div><div class="cdesc">Anthropic's family of large language models — highly capable and safety-focused.</div></div><div class="carr">↗</div></a>
+        <a href="https://aistudio.google.com/" target="_blank" rel="noopener" class="card" data-q="gemini google ai studio multimodal reasoning api research engineering"><div class="cico">GM2</div><div class="cbody"><div class="cname">Gemini (Google AI Studio)</div><div class="cdesc">High reasoning, multimodal processing — ideal for research, engineering, and creative work.</div></div><div class="carr">↗</div></a>
+        <a href="https://platform.openai.com/" target="_blank" rel="noopener" class="card" data-q="gpt openai api computer use tool calling platform workflow complex"><div class="cico">OA</div><div class="cbody"><div class="cname">GPT (OpenAI Platform)</div><div class="cdesc">First general model with native computer-use capabilities — complex cross-app workflows.</div></div><div class="carr">↗</div></a>
+        <a href="https://console.x.ai/" target="_blank" rel="noopener" class="card" data-q="grok xai console elon musk api realtime model fast series"><div class="cico">GK2</div><div class="cbody"><div class="cname">Grok (xAI Console)</div><div class="cdesc">xAI's large model series — real-time knowledge and fast reasoning.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.llama.com/" target="_blank" rel="noopener" class="card" data-q="llama meta open source large language model research production widely used"><div class="cico">LL</div><div class="cbody"><div class="cname">Llama (Meta)</div><div class="cdesc">Meta's open-source large language model family — widely used in research and production.</div></div><div class="carr">↗</div></a>
+        <a href="https://mistral.ai/" target="_blank" rel="noopener" class="card" data-q="mistral french llm efficient open source europe api platform models"><div class="cico">MS</div><div class="cbody"><div class="cname">Mistral AI</div><div class="cdesc">European open-source LLM platform with efficient, high-quality models and API access.</div></div><div class="carr">↗</div></a>
+        <a href="https://mimo.xiaomi.com/zh/" target="_blank" rel="noopener" class="card" data-q="mimo xiaomi open source reasoning model multimodal inference efficient"><div class="cico">MI</div><div class="cbody"><div class="cname">MiMo (Xiaomi)</div><div class="cdesc">Xiaomi's open-source reasoning model — efficient inference and multimodal interaction.</div></div><div class="carr">↗</div></a>
+        <a href="https://pinchbench.com/" target="_blank" rel="noopener" class="card" data-q="pinchbench lobster benchmark leaderboard agent tasks evaluation model ranking"><div class="cico">PB</div><div class="cbody"><div class="cname">PinchBench (Leaderboard)</div><div class="cdesc">Model leaderboard evaluating LLMs on real agent automation tasks.</div></div><div class="carr">↗</div></a>
+        <a href="https://artificialanalysis.ai/" target="_blank" rel="noopener" class="card" data-q="artificial analysis independent llm api benchmark comparison performance quality"><div class="cico">AA</div><div class="cbody"><div class="cname">Artificial Analysis</div><div class="cdesc">Independent benchmarking platform for AI language models and API providers.</div></div><div class="carr">↗</div></a>
+        <a href="https://arena.ai/leaderboard" target="_blank" rel="noopener" class="card" data-q="arena uc berkeley lmsys chatbot ranking community evaluation leaderboard"><div class="cico">AR</div><div class="cbody"><div class="cname">Arena.ai (UC Berkeley)</div><div class="cdesc">UC Berkeley's community-driven AI model evaluation and ranking platform.</div></div><div class="carr">↗</div></a>
+        <a href="https://openrouter.ai/rankings" target="_blank" rel="noopener" class="card" data-q="openrouter rankings usage model popularity real world llm usage based"><div class="cico">OR2</div><div class="cbody"><div class="cname">OpenRouter Rankings</div><div class="cdesc">Real-world usage-based model rankings across the OpenRouter platform.</div></div><div class="carr">↗</div></a>
+      </div>
+    </section>
+
+    <!-- ══ SKILLS MARKET ════════════════════════════════════ -->
+    <section class="cat" id="s-skills">
+      <div class="cat-hd"><div class="cat-ic">🛒</div><div class="cat-info"><div class="cat-ttl" data-k="t8">Skills Market</div><div class="cat-sub" data-k="d8">Discover, share, and install OpenClaw skills and plugins</div></div><div class="cat-cnt">8</div></div>
+      <div class="grid">
+        <a href="https://clawhub.ai/" target="_blank" rel="noopener" class="card" data-q="clawhub official registry skills openclaw canonical verified source"><div class="cico">CH</div><div class="cbody"><div class="cname">ClawHub</div><div class="cdesc">OpenClaw's official Skills registry — the canonical source for verified plugins.</div></div><div class="carr">↗</div></a>
+        <a href="https://skillhub.tencent.com/" target="_blank" rel="noopener" class="card" data-q="skillhub tencent cloud community chinese localized openclaw ecosystem"><div class="cico">SH</div><div class="cbody"><div class="cname">SkillHub (Tencent)</div><div class="cdesc">Tencent Cloud's skill community optimized for Chinese users — official OpenClaw ecosystem.</div></div><div class="carr">↗</div></a>
+        <a href="https://skills.sh/" target="_blank" rel="noopener" class="card" data-q="skills.sh vercel directory 24h popularity ranking install quick discovery"><div class="cico">SS</div><div class="cbody"><div class="cname">Skills.sh (Vercel)</div><div class="cdesc">Vercel's official skill directory — ranked by 24-hour popularity for quick discovery.</div></div><div class="carr">↗</div></a>
+        <a href="https://skillsmp.com/zh" target="_blank" rel="noopener" class="card" data-q="skillsmp open source skill github synced agent collection updated"><div class="cico">SM</div><div class="cbody"><div class="cname">SkillsMP</div><div class="cdesc">Open-source agent skill collection — continuously synced with GitHub updates.</div></div><div class="carr">↗</div></a>
+        <a href="https://agentskillshub.top/" target="_blank" rel="noopener" class="card" data-q="agent skills hub centralized deploy manage tools ide multi platform"><div class="cico">AS</div><div class="cbody"><div class="cname">Agent Skills Hub</div><div class="cdesc">Centralized platform to discover, manage, and deploy AI agent skills across tools and IDEs.</div></div><div class="carr">↗</div></a>
+        <a href="https://openclawdirectory.co.uk/" target="_blank" rel="noopener" class="card" data-q="openclaw directory community plugins workflows guides resources submitting"><div class="cico">OD</div><div class="cbody"><div class="cname">OpenClaw Directory</div><div class="cdesc">Community hub for discovering and managing OpenClaw skills, plugins and workflows.</div></div><div class="carr">↗</div></a>
+        <a href="https://clawskills.sh/" target="_blank" rel="noopener" class="card" data-q="clawskills 5490 filtered junk plugins curated collection quality pre filtered"><div class="cico">CS</div><div class="cbody"><div class="cname">ClawSkills</div><div class="cdesc">5,490+ curated skills — pre-filtered from 6,940 low-quality plugins.</div></div><div class="carr">↗</div></a>
+        <a href="https://hub.cocoloop.cn/" target="_blank" rel="noopener" class="card" data-q="cocoloop ai agent skills store fast secure chinese market shop"><div class="cico">CC</div><div class="cbody"><div class="cname">CocoLoop</div><div class="cdesc">Faster, more secure AI Agent Skills store for the Chinese market.</div></div><div class="carr">↗</div></a>
+      </div>
+    </section>
+
+    <!-- ══ ECOSYSTEM ═════════════════════════════════════════ -->
+    <section class="cat" id="s-eco">
+      <div class="cat-hd"><div class="cat-ic">🌐</div><div class="cat-info"><div class="cat-ttl" data-k="t9">Ecosystem Tools</div><div class="cat-sub" data-k="d9">Integrations and extensions across the OpenClaw ecosystem</div></div><div class="cat-cnt">1</div></div>
+      <div class="grid">
+        <a href="https://xcrawl.com/?keyword=2ozjddoq" target="_blank" rel="noopener" class="card" data-q="xcrawl web scraping url crawl search openclaw integration skill native"><div class="cico">XC</div><div class="cbody"><div class="cname">Xcrawl</div><div class="cdesc">Integrate XCrawl with OpenClaw — web scraping, URL discovery, and search as native skills.</div></div><div class="carr">↗</div></a>
+      </div>
+    </section>
+
+    <!-- ══ AGENT ECOSYSTEM ══════════════════════════════════ -->
+    <section class="cat" id="s-agenteco">
+      <div class="cat-hd"><div class="cat-ic">🤝</div><div class="cat-info"><div class="cat-ttl" data-k="t10">Agent Ecosystem</div><div class="cat-sub" data-k="d10">Communities, social networks, and management tools for agents</div></div><div class="cat-cnt">12</div></div>
+      <div class="grid">
+        <a href="https://www.moltbook.cn/" target="_blank" rel="noopener" class="card" data-q="moltbook social network ai agent community profiles interactions"><div class="cico">MB</div><div class="cbody"><div class="cname">Moltbook</div><div class="cdesc">Social network built for AI Agents — interactions, profiles, and communities.</div></div><div class="carr">↗</div></a>
+        <a href="https://clawdchat.ai/" target="_blank" rel="noopener" class="card" data-q="xialiao chat agent social platform ai compete learn together"><div class="cico">XL</div><div class="cbody"><div class="cname">Xia Liao (虾聊)</div><div class="cdesc">Social platform connecting AI Agents — interact, learn, and compete together.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.agentmail.to/" target="_blank" rel="noopener" class="card" data-q="agentmail email infrastructure ai agent programmatic send receive parse"><div class="cico">AM</div><div class="cbody"><div class="cname">AgentMail</div><div class="cdesc">Email infrastructure built specifically for AI Agents — send, receive, and parse.</div></div><div class="carr">↗</div></a>
+        <a href="https://mails.dev/" target="_blank" rel="noopener" class="card" data-q="mails.dev email agent minimal send receive understand programmatic"><div class="cico">MD</div><div class="cbody"><div class="cname">mails.dev</div><div class="cdesc">Minimal email service for AI agents — built for agents that need to understand email.</div></div><div class="carr">↗</div></a>
+        <a href="https://souls.zip/shop" target="_blank" rel="noopener" class="card" data-q="souls zip production tested agent engineering design finance free paid market"><div class="cico">SZ</div><div class="cbody"><div class="cname">Souls.zip</div><div class="cdesc">Production-tested AI agent souls across engineering, design, ops, finance, and marketing.</div></div><div class="carr">↗</div></a>
+        <a href="https://clawbench.net/" target="_blank" rel="noopener" class="card" data-q="clawbench benchmark evaluation 210 tasks 14 domains agent framework standardized levels"><div class="cico">CB</div><div class="cbody"><div class="cname">Claw Bench</div><div class="cdesc">Standardized agent framework evaluation — 210 tasks, 14 domains, 4 difficulty levels.</div></div><div class="carr">↗</div></a>
+        <a href="https://clawpal.xyz/" target="_blank" rel="noopener" class="card" data-q="clawpal desktop config visual manage ai agent setup assistant"><div class="cico">CP2</div><div class="cbody"><div class="cname">ClawPal</div><div class="cdesc">Desktop configuration assistant for OpenClaw — visually manage your agent setup.</div></div><div class="carr">↗</div></a>
+        <a href="https://clawwatcher.com/" target="_blank" rel="noopener" class="card" data-q="clawwatcher monitor dashboard agent behavior cost realtime visualization"><div class="cico">CW</div><div class="cbody"><div class="cname">ClawWatcher</div><div class="cdesc">Monitoring dashboard for OpenClaw — real-time visualization of behavior and costs.</div></div><div class="carr">↗</div></a>
+        <a href="https://clawmanager.ai/" target="_blank" rel="noopener" class="card" data-q="clawmanager dashboard build deploy manage accessible everyone agent easy"><div class="cico">CM</div><div class="cbody"><div class="cname">ClawManager</div><div class="cdesc">Dashboard making OpenClaw accessible to everyone — build, deploy, and manage agents.</div></div><div class="carr">↗</div></a>
+        <a href="https://openclawcases.zeabur.app/" target="_blank" rel="noopener" class="card" data-q="openclaw use cases prompts cursor claude code agent direct copy use"><div class="cico">UC</div><div class="cbody"><div class="cname">OpenClaw Use Cases</div><div class="cdesc">Copy prompts and use directly in OpenClaw, Claude Code, Cursor, or any AI agent tool.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.reddit.com/r/openclaw/" target="_blank" rel="noopener" class="card" data-q="reddit openclaw discussion community subreddit forum news help users"><div class="cico">RD</div><div class="cbody"><div class="cname">Reddit r/openclaw</div><div class="cdesc">OpenClaw discussion community on Reddit — news, help, and user stories.</div></div><div class="carr">↗</div></a>
+        <a href="https://discord.gg/openclaw" target="_blank" rel="noopener" class="card" data-q="discord official server realtime technical support community qa announcements"><div class="cico">DC2</div><div class="cbody"><div class="cname">Discord Official Server</div><div class="cdesc">Real-time technical discussions, Q&amp;A, and community announcements.</div></div><div class="carr">↗</div></a>
+      </div>
+    </section>
+
+    <!-- ══ AGENT PAYMENTS ════════════════════════════════════ -->
+    <section class="cat" id="s-agentpay">
+      <div class="cat-hd"><div class="cat-ic">💳</div><div class="cat-info"><div class="cat-ttl" data-k="t11">Agent Payments</div><div class="cat-sub" data-k="d11">Virtual cards, wallets, and payment rails for AI agents</div></div><div class="cat-cnt">10</div></div>
+      <div class="grid">
+        <a href="https://claw402.ai/" target="_blank" rel="noopener" class="card" data-q="claw402 usdc crypto payment ai assistant agent autonomous"><div class="cico">C4</div><div class="cbody"><div class="cname">Claw402</div><div class="cdesc">A personal AI assistant that pays with USDC — autonomous crypto payments.</div></div><div class="carr">↗</div></a>
+        <a href="https://skillpay.me/" target="_blank" rel="noopener" class="card" data-q="skillpay credit universal payment openclaw system transaction agent"><div class="cico">SP2</div><div class="cbody"><div class="cname">SkillPay</div><div class="cdesc">Credit-based universal payment system built for OpenClaw transactions.</div></div><div class="carr">↗</div></a>
+        <a href="https://agentcard.ai/" target="_blank" rel="noopener" class="card" data-q="agentcard virtual credit card ai agent standalone purpose built dedicated"><div class="cico">AG2</div><div class="cbody"><div class="cname">AgentCard.ai</div><div class="cdesc">Standalone virtual credit card purpose-built for AI Agents.</div></div><div class="carr">↗</div></a>
+        <a href="https://agentcard.sh/" target="_blank" rel="noopener" class="card" data-q="agentcard.sh virtual credit card artificial intelligence agents payment dedicated"><div class="cico">AS2</div><div class="cbody"><div class="cname">AgentCard.sh</div><div class="cdesc">Virtual credit card designed specifically for artificial intelligence agents.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.clawcard.sh/" target="_blank" rel="noopener" class="card" data-q="clawcard unified credentials credit card email phone one key agent system"><div class="cico">CC2</div><div class="cbody"><div class="cname">Clawcard.sh</div><div class="cdesc">Unified credential system — one key manages credit card, email, and phone for agents.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.lobster.cash/" target="_blank" rel="noopener" class="card" data-q="lobster cash agent pay secure human oversight audit trail anything"><div class="cico">LC</div><div class="cbody"><div class="cname">Lobster.cash</div><div class="cdesc">Let your agent pay for anything — secure with human oversight and full audit trail.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.machines.cash/" target="_blank" rel="noopener" class="card" data-q="machines cash visa virtual card individuals agents payment both"><div class="cico">MC</div><div class="cbody"><div class="cname">Machines Cash</div><div class="cdesc">Virtual Visa credit card for both individuals and AI agents.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.gate.com/zh/gate-for-ai/pay" target="_blank" rel="noopener" class="card" data-q="gate pay ai agent native automated request payment callback auto no redirect"><div class="cico">GP2</div><div class="cbody"><div class="cname">Gate Pay for AI</div><div class="cdesc">AI Agent-native payments — request, pay, and callback fully automated, no redirects.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.coinbase.com/zh-cn/developer-platform/products/agentkit" target="_blank" rel="noopener" class="card" data-q="coinbase agentkit autonomous payment crypto developer platform capabilities empower"><div class="cico">CB2</div><div class="cbody"><div class="cname">Coinbase AgentKit</div><div class="cdesc">Empower your AI agent with autonomous crypto payment capabilities.</div></div><div class="carr">↗</div></a>
+        <a href="https://clawvault.cc/" target="_blank" rel="noopener" class="card" data-q="clawvault platform guarantee ai agent spending budget control manage all"><div class="cico">CV</div><div class="cbody"><div class="cname">ClawVault</div><div class="cdesc">Manage and guarantee all your AI Agent spending with budget controls.</div></div><div class="carr">↗</div></a>
+      </div>
+    </section>
+
+    <!-- ══ CRYPTO ════════════════════════════════════════════ -->
+    <section class="cat" id="s-crypto">
+      <div class="cat-hd"><div class="cat-ic">₿</div><div class="cat-info"><div class="cat-ttl" data-k="t12">Crypto Ecosystem</div><div class="cat-sub" data-k="d12">AI agents integrated with exchanges and Web3 platforms</div></div><div class="cat-cnt">7</div></div>
+      <div class="grid">
+        <a href="https://www.okx.com/zh-hans/agent-tradekit" target="_blank" rel="noopener" class="card" data-q="okx agent trade kit natural language crypto exchange direct connect no switching"><div class="cico">OK</div><div class="cbody"><div class="cname">OKX Agent Trade Kit</div><div class="cdesc">Connect your AI to OKX — trade via natural language, no manual switching needed.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.binance.com/zh-CN/skills" target="_blank" rel="noopener" class="card" data-q="binance skills hub agent native crypto 24 7 access run operations clock"><div class="cico">BN</div><div class="cbody"><div class="cname">Binance Skills Hub</div><div class="cdesc">Give AI agents native access to crypto — run your Binance operations around the clock.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.bitget.com/zh-CN/activity-hub/get-claw" target="_blank" rel="noopener" class="card" data-q="getclaw bitget ai agent autonomous trading no code speak trade bitget"><div class="cico">BG</div><div class="cbody"><div class="cname">GetClaw (Bitget)</div><div class="cdesc">Bitget's AI trading agent — no code needed, just speak to trade.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.htx.com/zh-cn/skills" target="_blank" rel="noopener" class="card" data-q="htx ai skills open trading protocol agent spot futures natural language query"><div class="cico">HT</div><div class="cbody"><div class="cname">HTX AI Skills</div><div class="cdesc">Open trading protocol for AI agents — query markets and execute trades via natural language.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.gate.com/zh/gateclaw" target="_blank" rel="noopener" class="card" data-q="gateclaw gate web3 agent automation tasks blockchain defi platform"><div class="cico">GC</div><div class="cbody"><div class="cname">GateClaw</div><div class="cdesc">Gate's AI Web3 Agent platform — executes automated Web3 and DeFi tasks.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.bybit.com/zh-MY/ai" target="_blank" rel="noopener" class="card" data-q="bybit ai hub assistant full trading stack connected spot derivatives more"><div class="cico">BY</div><div class="cbody"><div class="cname">Bybit AI Hub</div><div class="cdesc">Your AI assistant connected to Bybit's full trading stack — spot, derivatives, and more.</div></div><div class="carr">↗</div></a>
+        <a href="https://www.aicoin.com/zh-Hans/coinclaw" target="_blank" rel="noopener" class="card" data-q="coinclaw aicoin web3 ai special agent 24 7 chains ready on duty"><div class="cico">CO</div><div class="cbody"><div class="cname">COIN CLAW</div><div class="cdesc">Your Web3 AI resident agent — out of the box and on duty 24/7 across all chains.</div></div><div class="carr">↗</div></a>
+      </div>
+    </section>
+
+  </main>
+</div><!-- /shell -->
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+<footer>
+  <div class="ft">
+    <div class="flogo">
+      <div class="fdot"></div>
+      <div class="flogo-text">
+        <span class="flogo-name">ClawNav</span>
+        <a class="flogo-url" href="https://claw.corporateinchina.com" target="_blank" rel="noopener">claw.corporateinchina.com</a>
+      </div>
+    </div>
+    <p class="fdesc" data-k="fdesc">OpenClaw ecosystem directory — tools, deployments, models &amp; community resources.</p>
+    <div class="flinks">
+      <a href="https://openclaw.ai/" target="_blank" rel="noopener" class="fl" data-k="foff">OpenClaw Official</a>
+      <a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener" class="fl">GitHub</a>
+      <a href="https://discord.gg/openclaw" target="_blank" rel="noopener" class="fl">Discord</a>
+    </div>
+    <p class="fcopy" data-k="fcopy">© 2026 claw.corporateinchina.com · All linked services are third-party products. Users are responsible for their own due diligence. Not affiliated with OpenClaw or any listed service unless stated.</p>
+  </div>
+</footer>
+
+<button id="btt" aria-label="Back to top">↑</button>
+
+<script src="js/app.js"></script>
+</body>
+</html>
